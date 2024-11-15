@@ -30,6 +30,9 @@ export const TABLE: Readonly<{ [key: string]: CharReadOffsets }> = {
     "X": [[0,0],[2,0],[0,2],[2,2]],
     "Y": [[0,0],[2,0],[1,1],[1,2]],
     "Z": [[0,0],[2,0],[0,2],[2,2]],
+    "Æ": [[1,0],[2,0],[2,1],[0,2],[1,2],[2,2]],
+    "Ø": [[2,0],[0,2]],
+    "Å": [[1,0],[0,2],[2,2]],
     "0": [],
     "1": [[0,0],[1,0],[0,2],[2,2]],
     "2": [[0,0],[0,2],[2,2]],
@@ -53,8 +56,7 @@ export const getRandomValidKey = (): string =>
 export const isValidCellKey = (key: string): boolean => VALID_KEYS.includes(key);
 
 export const NON_SELF_REFERENCING_KEYS = VALID_KEYS.filter(key => {
-    const offsets = TABLE[key];
-    return !(offsets[0][0] === 0 && offsets[0][1] === 0 )
+    return !(TABLE[key][0][0] === 0 && TABLE[key][0][1] === 0 )
 });
 
 export const getRandomValidStarterKey = (): string => 
