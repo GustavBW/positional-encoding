@@ -1,0 +1,15 @@
+{
+  "name": "pos-enc",
+  "module": "src/index.ts",
+  "type": "module",
+  "scripts": {
+    "build": "tsc && bun test && bun build ./src/index.ts --outfile=./dist/pos_enc.js --target=bun", // --minify
+    "test_run": "bun run build && bun ./dist/pos_enc.js"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  }
+}
