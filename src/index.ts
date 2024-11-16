@@ -44,7 +44,7 @@ const encodeString = (input: string): Cell[] => {
 };
 
 // Example usage
-const input = "SERIOUSLY?";
+const input = "MARIUS";
 const encoded = encodeString(input);
 
 // Print them nicely
